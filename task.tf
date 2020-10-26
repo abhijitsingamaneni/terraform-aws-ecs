@@ -2,7 +2,7 @@ data "aws_caller_identity" "current" {}
 
 resource "aws_ecs_task_definition" "dev-task" {
   family                   = "ecs-task-curai-${var.env}-${var.application}"
-  container_definitions    = file(var.service_file)
+  container_definitions    = file("${path.module}/${var.service_file}")
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.container_cpu
