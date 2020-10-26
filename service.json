@@ -1,0 +1,15 @@
+[
+    {
+      "name": "web",
+      "image": "446680391072.dkr.ecr.ap-south-1.amazonaws.com/demo:latest",
+      "cpu": 10,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ]
+    }
+]
