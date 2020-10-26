@@ -7,5 +7,5 @@ resource "aws_ecs_task_definition" "dev-task" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.container_cpu
   memory                   = var.container_memory
-  execution_role_arn       = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/role-ecs-${var.env}"
+  execution_role_arn       = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/role-ecs-${var.env}-${var.application}"
 }
