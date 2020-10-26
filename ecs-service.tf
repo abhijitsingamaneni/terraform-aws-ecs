@@ -7,7 +7,7 @@ resource "aws_ecs_service" "nginx" {
   cluster             = "ecs-curai-${var.env}-${var.application}"
 
 network_configuration {
-    subnets           = ["subnet-0f542df06b6c30158"]
+    subnets           = ["subnet-0f209345c217321a3"]
     security_groups   = ["sg-0b7e9b66d86703bb4"]
     assign_public_ip  = "true"
 } 
