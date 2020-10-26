@@ -1,7 +1,7 @@
 [
     {
       "name": "web",
-      "image": "446680391072.dkr.ecr.ap-south-1.amazonaws.com/demo:latest",
+      "image": "501611955209.dkr.ecr.us-west-2.amazonaws.com/nginx:latest",
       "cpu": 10,
       "memory": 512,
       "essential": true,
