@@ -13,7 +13,7 @@ network_configuration {
 } 
 
 load_balancer {
-    target_group_arn = "arn:aws:elasticloadbalancing:us-west-2:501611955209:targetgroup/test/37ee2358a8529e69"
+    target_group_arn = "arn:aws:elasticloadbalancing:us-west-2:501611955209:targetgroup/test/7978436f7f8d3f6d"
     container_name   = "web"
     container_port   = 80
   }
