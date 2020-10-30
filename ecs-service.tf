@@ -8,7 +8,7 @@ resource "aws_ecs_service" "nginx" {
 
 network_configuration {
     subnets           = ["subnet-0f542df06b6c30158"]
-    security_groups   = ["sg-0b7e9b66d86703bb4"]
+    security_groups   = ["sg-01da4fafbe5b218f3"]
     assign_public_ip  = "true"
 } 
 
