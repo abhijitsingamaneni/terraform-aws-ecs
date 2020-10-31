@@ -1,21 +1,21 @@
-resource "aws_ecs_service" "nginx" {
-  name                = "nginx-demo"
-  desired_count       = 3
+resource "aws_ecs_service" "ecs_service" {
+  name                = "ecs-service-curai-${var.env}-${var.application}"
+  desired_count       = var.desired_count
   launch_type         = "FARGATE"
-  scheduling_strategy = "REPLICA"
+  scheduling_strategy = var.scheduling_strategy
   task_definition     = "ecs-task-curai-${var.env}-${var.application}"
   cluster             = "ecs-curai-${var.env}-${var.application}"
 
 network_configuration {
-    subnets           = ["subnet-0f542df06b6c30158"]
-    security_groups   = ["sg-01da4fafbe5b218f3"]
-    assign_public_ip  = "true"
+    subnets           = [var.subnets]
+    security_groups   = [var.security_groups]
+    assign_public_ip  = var.assign_public_ip
 } 
 
 load_balancer {
-    target_group_arn = "arn:aws:elasticloadbalancing:us-west-2:501611955209:targetgroup/test/7978436f7f8d3f6d"
-    container_name   = "web"
-    container_port   = 80
+    target_group_arn = var.target_group_arn
+    container_name   = var.container_name
+    container_port   = var.container_port
   }
 }
 

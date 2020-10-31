@@ -1,7 +1,7 @@
 [
     {
-      "name": "web",
-      "image": "501611955209.dkr.ecr.us-west-2.amazonaws.com/nginx:latest",
+      "name": "${container_name}",
+      "image": "${ecr_repo}",
       "cpu": 10,
       "memory": 512,
       "essential": true,

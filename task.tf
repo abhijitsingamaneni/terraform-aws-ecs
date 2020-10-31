@@ -1,5 +1,14 @@
 data "aws_caller_identity" "current" {}
 
+data "template_file" "data_task" {
+    template           = "${file("${path.module}/service.tpl")}"
+
+    vars {
+        ecr_repo       = "${var.ecr_repo}"
+        container_name = "${var.container_name}"
+    }
+}
+
 resource "aws_ecs_task_definition" "dev-task" {
   family                   = "ecs-task-curai-${var.env}-${var.application}"
   container_definitions    = file("${path.module}/${var.service_file}")

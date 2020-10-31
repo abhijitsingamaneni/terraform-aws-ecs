@@ -18,3 +18,5 @@ variable "env" {
 variable "application" {
     description = "name of the application that we are deploying for (example: apiserver or chatserver or doctor-web)"
 }
+
+// service variables
